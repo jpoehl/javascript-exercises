@@ -4,7 +4,6 @@ const caesar = function (message, shift) {
     const unicodesMessage = [];
     const unicodesEncrypted = [];
     const encryptedMessage = [];
-    const finalMessage = [];
 
     if (shift < 0) {
         shift = 26 + (shift % 26); //https://stackoverflow.com/questions/57294167/how-to-process-negative-shifts-in-caesars-cipher-javascript
@@ -34,13 +33,13 @@ const caesar = function (message, shift) {
 
     for (let i = 0; i < lowercaseLetters.length; i++) {
         if (lowercaseLetters[i] === true) {
-            finalMessage[i] = encryptedMessage[i].toLowerCase();
+            encryptedMessage[i] = encryptedMessage[i].toLowerCase();
         } else {
-            finalMessage[i] = encryptedMessage[i];
+            encryptedMessage[i] = encryptedMessage[i];
         }
     }
 
-    return finalMessage.join("");
+    return encryptedMessage.join("");
 
 };
 
